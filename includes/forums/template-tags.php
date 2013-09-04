@@ -62,7 +62,8 @@ function bbp_has_forums( $args = '' ) {
 		'post_type'      => bbp_get_forum_post_type(),
 		'post_parent'    => bbp_is_forum_archive() ? 0 : bbp_get_forum_id() ,
 		'post_status'    => bbp_get_public_status_id(),
-		'posts_per_page' => get_option( '_bbp_forums_per_page', 50 ),
+		'posts_per_page' => get_option( '_bbp_forums_per_page', 15),
+		'paged'			 => (get_query_var('paged')) ? get_query_var('paged') : 1,
 		'orderby'        => 'menu_order',
 		'order'          => 'ASC'
 	), 'has_forums' );
